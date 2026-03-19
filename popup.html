@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      width: 300px;
+      background: #12112a;
+      color: #f4f3ff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      padding: 1rem;
+    }
+    h2 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #6060ff, #b040ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.8rem;
+    }
+    .status-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+    .status-badge.on  { background: rgba(40,160,80,0.15); border: 1px solid rgba(60,200,100,0.3); color: #60e898; }
+    .status-badge.off { background: rgba(100,90,255,0.1);  border: 1px solid #35336a; color: #a8a6c8; }
+
+    label { font-size: 0.7rem; color: #a8a6c8; display: block; margin-bottom: 0.3rem; }
+    input {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid #35336a; border-radius: 7px;
+      color: #c0bfff; font-size: 0.75rem;
+      padding: 0.45rem 0.7rem; outline: none;
+      margin-bottom: 0.7rem;
+    }
+    .stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.4rem; margin-bottom: 0.8rem;
+    }
+    .stat {
+      background: rgba(255,255,255,0.04); border: 1px solid #35336a;
+      border-radius: 7px; padding: 0.45rem 0.6rem;
+    }
+    .stat-label { font-size: 0.58rem; color: #a8a6c8; }
+    .stat-val   { font-size: 0.95rem; font-weight: 700; color: #b0b4ff; }
+
+    .btn {
+      width: 100%; padding: 0.6rem; border: none; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    }
+    .btn-start { background: linear-gradient(135deg,#5050ee,#a040ee); color:#fff; }
+    .btn-stop  { background: rgba(200,60,60,0.12); color:#ff6060; border:1px solid rgba(200,60,60,0.3); }
+  </style>
+</head>
+<body>
+  <h2>🕷️ 회선 MAX 크롤링 노드</h2>
+  <div class="status-badge off" id="badge">● 대기 중</div>
+
+<div class="stats">
+    <div class="stat"><div class="stat-label">크롤링 완료</div><div class="stat-val" id="done">0</div></div>
+    <div class="stat"><div class="stat-label">추출 단어수</div><div class="stat-val" id="words">0</div></div>
+  </div>
+
+  <button class="btn btn-start" id="startBtn" onclick="toggle()">시작</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

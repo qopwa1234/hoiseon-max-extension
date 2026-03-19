@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "회선 MAX — 크롤링 노드",
+  "version": "1.0",
+  "description": "AI 크롤링 노드 — CORS 없이 백그라운드 크롤링",
+  "permissions": ["storage", "alarms", "notifications"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  }
+}
